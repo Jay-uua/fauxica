@@ -1,0 +1,325 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins';
+ 
+}
+
+.wrapper {
+  /*para magkaroon margin sa wall frame*/
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*Navbar section*/
+
+header {
+  /*lipat position para kapantay ng logo*/
+  display: flex;
+  /*changing position the nav into  right from left*/
+  justify-content: space-between; 
+  /*para bumaba yung logo kasi masyadong mataas*/
+  align-items: center;
+}
+
+nav {
+  /*little spaces in the nav*/
+  margin: 4em;
+ 
+  
+}
+
+nav ul {
+  /*to remove the bullets from the nav*/
+  list-style: none;
+  /* making the nav into 1 line*/
+  display: flex;
+  /*giving spaces or gaps to nav*/
+  gap: 4.1em;
+  /*to maintin default margin (not sure*/
+  margin: 0;
+}
+
+nav ul li a {
+  /*remove the decoration of the text ex. remove underline*/
+  text-decoration: none;
+  color: black;
+  /*CApitalize the letter*/
+  text-transform: uppercase;
+  /*changing the font-size*/
+  font-size: 1.6rem;
+  position: relative;
+}
+/*this section is for nav (HOME) button*/
+nav ul li a.active:before {
+  position: absolute;
+  content: "";
+  width: 35%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  /*to make the line below the Home tag*/
+  bottom: -6px;
+}
+
+nav ul li a:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  border-bottom: 2px solid rgb(103, 100, 100);
+  bottom: -6px;
+  transition: .2s;
+}
+
+/*Hero Section*/
+main {
+  display: flex; 
+  gap: 8em;
+  margin-top: 9em;
+
+}
+.left-col {
+  width: 45%;
+}
+
+.right-col {  
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 5.2rem;
+  font-family: 'Playfair Display';
+  font-weight: normal;
+  margin: 0 auto;
+}
+
+p.subhead {
+  font-size: 18px;
+}
+
+/*button section*/
+.cta-btns {
+  margin: 5em 0;
+}
+
+
+.cta-btns, .secondary-cta {
+  display: flex;
+  gap: 2em;
+}
+
+.primary-cta {
+  background-color: #ebdece;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  /*box ratio*/
+  border-radius: 1.1em;
+  /*allow you to resize the padding or a border*/
+  padding: 1em 2em;
+
+}
+.secondary-cta {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 1em 0;
+ 
+
+}
+
+.secondary-cta svg {
+  width: 20px;
+  transition: transform .3s;
+}
+
+/*news (50k) section*/
+.news {
+  display: flex;
+  gap: 3em;
+  font-size: 9.36p;
+  padding: 46.8px;
+  border: 1px solid black;
+  border-radius: .8em;
+  position: relative;
+  line-height: 100%;
+}
+
+
+/*EMPLOYEES*/ 
+ 
+.news:before {
+  position: absolute;
+  content: "";
+  background: url('../images/comfetti.svg');
+  width: 100px;
+  height: 100px;
+  top: -20px;
+  left: -20px;
+  z-index: 2;
+}
+
+.employees {
+  font-size: 3rem;
+  line-height: 100%;
+}
+
+p.employees {
+  margin: 0;
+  font-weight: 200;
+}
+
+p.details {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+/*Right column gallery*/
+
+.right-col {
+  display: grid;
+  gap: 2.3em;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: 
+  "left right"
+  "left bottom";
+}
+
+.card {
+ border-radius: .8em;
+  padding: 1.1em;
+  /*to display to the right side*/
+  display: flex;
+  /*to align from top to bottom*/
+  align-items: end;
+  background-size: 100%;
+  transition: background-size .3s;
+
+}
+
+.card1 {
+  grid-area: left;
+  background-image: url('../images/Rectangle2shoes.jpg');
+  position: relative;
+}
+
+/*tag in the shoes*/
+.card1:before {
+  position: absolute;
+  content: "";
+  background: url('../images/tag.svg') no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  left: -30px; 
+  pointer-events: none;
+}
+
+.card2 {
+  grid-area: right;
+  background-image: url('../images/Rectangle3.jpg');
+}
+
+.card3 {
+  grid-area: bottom;
+  background-image: url('../images/Rectangle4.jpg');
+}
+.card-details {
+  background: white;
+  border-radius: .6em;
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform .3s;
+}
+
+.card-details a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.card-details p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+p.prouct-price {
+  font-size: 1.8rem;
+}
+
+/*Micro interaction*/
+nav ul li a:hover:before {
+  width: 35%;
+}
+
+.primary-cta:hover {
+  background: #d3d0a7;
+
+}
+
+.secondary-cta:hover svg {
+  transform: translate(10px);
+
+}
+
+.secondary-cta:hover {
+  text-decoration: underline;
+
+}
+
+.card:hover {
+  background-size: 110%;
+}
+
+.card:hover .card-details {
+  transform: translateY(-10px);
+
+}
+
+/*intro to animation*/ 
+
+.overlay {
+  position: absolute;
+  z-index: 999;
+  background: white;
+  width: 100%;
+  height: 100%;
+  animation: ipakita 1s ease-in forwards;
+  transform-origin: bottom;
+
+}
+
+@keyframes ipakita {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+main {
+  animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  transform: scale(.4);
+}
+
+@keyframes growIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
